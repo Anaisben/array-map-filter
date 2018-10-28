@@ -39,6 +39,15 @@ Exemple d'entrée:
  */
 
 function searchWordFilter(items, search) {
+  return items.filter(recherche => {
+    const tab = search.split('')
+    const up = tab[0].toUpperCase()
+    const moins = (search.substr(1, tab.length))
+    const nwTab = (up + moins)
+    if(recherche.includes(search) || (recherche.includes(nwTab))){
+      return recherche
+    }
+  })
 }
 
 // Ne pas modifier l'export

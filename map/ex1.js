@@ -19,14 +19,23 @@ En sortie: [
   'Mayonnaise contains 10 characters'
 ]
 
- */
+const getStringsLength = string.map(function(string) {
+  return string + " contains " + string.length + " characters "
+});
+*/
 
-function getStringsLength(strings) {
+const getStringsLength = (string) => {
+  return string.map(food => {
+  
+ return food + ` contains ` + food.length + ` characters`
+});
 }
+
 
 // Si besoin, tu peux toujours visualiser le résultat avec console.log,
 // mais alors, il faut alors lancer l'exercice avec node map/ex1
 // console.log(getStringsLength(['Cat', 'Lion', 'Tiger', 'Jaguar', 'Leopard']));
 
 // Ne pas modifier l'export
+
 module.exports = getStringsLength;

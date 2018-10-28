@@ -60,9 +60,28 @@ En sortie:
  */
 
 function getMoviesFreshness(movies) {
+  return movies.map(certification => {
+    if(certification.rating > 75 ){
+      return{
+        name: certification.name,
+        rating: certification.rating,
+        label: `certified fresh`
+      };
+    }if(certification.rating >= 60 && certification.rating <= 75){
+      return{
+        name: certification.name,
+        rating: certification.rating,
+        label: `fresh`
+        };
+    }else{
+      return{
+        name: certification.name,
+        rating: certification.rating,
+        label: `rotten`
+      };
+    }
+  })
 }
-
-
 
 // Ne pas modifier l'export
 module.exports = getMoviesFreshness;
